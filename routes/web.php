@@ -30,11 +30,10 @@ Route::middleware(['auth', 'verified'])
 
         Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
 
-        Route::resource('posts', PostController::class)->parameters([
-            'posts' => 'post:slug'
-        ]);
-        Route::resource('projects', ProjectController::class);
+        Route::resource('posts', PostController::class);
 
+        
+        Route::resource('projects', ProjectController::class);
     });
 
 
