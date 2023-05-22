@@ -15,8 +15,8 @@
             @foreach ($posts as $post)
                 <tr>
                     <th>{{ $post->id }}</th>
-                    <td>{{ $post->title }}<< /td>
-                    <td>{{ $post->slug }}<< /td>
+                    <td>{{ $post->title }}</td>
+                    <td>{{ $post->slug }}</td>
                 </tr>
             @endforeach
 
