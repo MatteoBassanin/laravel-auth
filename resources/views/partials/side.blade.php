@@ -6,8 +6,13 @@
     </a>
     <ul class="nav nav-pills flex-column mb-auto">
         <li class="nav-item">
-            <a href="#" class="nav-link active" aria-current="page">
+            <a href="{{ route('admin.dashboard') }}" class="nav-link active" aria-current="page">
                 <div class="text-center">Dashboard</div>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="{{ route('admin.posts.index') }}" class="nav-link active" aria-current="page">
+                <div class="text-center">Posts</div>
             </a>
         </li>
     </ul>
