@@ -15,5 +15,10 @@
                 <div class="text-center">Posts</div>
             </a>
         </li>
+        <li class="nav-item">
+            <a href="{{ route('admin.projects.index') }}" class="nav-link active" aria-current="page">
+                <div class="text-center">Projects</div>
+            </a>
+        </li>
     </ul>
 </div>
