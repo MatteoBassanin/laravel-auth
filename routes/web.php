@@ -18,8 +18,12 @@ use App\Models\Project;
 |
 */
 
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 Route::get('/', function () {
-    return view('welcome');
+    $projects = Project::all();
+    return view('welcome', compact('projects'));
 });
 
 
@@ -34,7 +38,10 @@ Route::middleware(['auth', 'verified'])
         Route::resource('posts', PostController::class);
 
 
-        Route::resource('projects', ProjectController::class);
+        Route::resource('projects', ProjectController::class)->parameters([
+            'projects' => 'project:slug'
+        ]);
+
     });
 
 

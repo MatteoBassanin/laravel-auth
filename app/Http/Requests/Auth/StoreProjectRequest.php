@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Requests;
+namespace App\Http\Requests\Auth;
 
 use Illuminate\Foundation\Http\FormRequest;
 
@@ -24,7 +24,9 @@ class StoreProjectRequest extends FormRequest
     public function rules()
     {
         return [
-
+            'title' => 'required|max:100|unique:projects',
+            'category' => 'required|max:50',
+            'content' => 'nullable'
         ];
     }
 }

@@ -26,7 +26,7 @@
                     <td>{{ $project->category }}</td>
                     <td>{{ $project->slug }}</td>
                     <td>
-                        <a class="btn btn-primary"href="{{ route('admin.projects.show', ['project' => $project->id]) }}">
+                        <a class="btn btn-primary"href="{{ route('admin.projects.show', ['project' => $project->slug]) }}">
                             Mostra
                         </a>
 
