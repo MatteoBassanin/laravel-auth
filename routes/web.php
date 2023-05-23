@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\PostController;
 use App\Http\Controllers\Admin\ProjectController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Models\Project;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,7 +33,7 @@ Route::middleware(['auth', 'verified'])
 
         Route::resource('posts', PostController::class);
 
-        
+
         Route::resource('projects', ProjectController::class);
     });
 

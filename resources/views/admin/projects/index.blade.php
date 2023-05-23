@@ -3,6 +3,11 @@
 
 
 @section('content')
+    <div class="ms_container">
+        <a class="btn btn-primary"href="{{ route('admin.projects.create') }}">
+            Crea nuovo progetto
+        </a>
+    </div>
     <table class="table">
         <thead>
             <tr>
@@ -21,8 +26,10 @@
                     <td>{{ $project->category }}</td>
                     <td>{{ $project->slug }}</td>
                     <td>
-                        <a class="button button-primary"
-                            href="{{ route('admin.projects.show', ['project' => $project->id]) }}">Mostra</a>
+                        <a class="btn btn-primary"href="{{ route('admin.projects.show', ['project' => $project->id]) }}">
+                            Mostra
+                        </a>
+
                     </td>
                 </tr>
             @endforeach
