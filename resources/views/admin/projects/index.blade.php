@@ -29,7 +29,9 @@
                         <a class="btn btn-primary"href="{{ route('admin.projects.show', ['project' => $project->slug]) }}">
                             Mostra
                         </a>
-
+                        <a class="btn btn-warning"href="{{ route('admin.projects.edit', ['project' => $project->slug]) }}">
+                            Modifica
+                        </a>
                     </td>
                 </tr>
             @endforeach

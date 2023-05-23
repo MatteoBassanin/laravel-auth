@@ -4,7 +4,8 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Project;
-use App\Http\Requests\Auth\StoreProjectRequest;
+use App\Http\Requests\StoreProjectRequest;
+use App\Http\Requests\UpdateProjectRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 
@@ -71,7 +72,7 @@ class ProjectController extends Controller
      */
     public function edit(Project $project)
     {
-        //
+        return view('admin.projects.edit', compact('project'));
     }
 
     /**
@@ -81,9 +82,17 @@ class ProjectController extends Controller
      * @param  \App\Models\Project  $project
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Project $project)
+    public function update(UpdateProjectRequest $request, Project $project)
     {
-        //
+
+
+        $validated_data = $request->validated();
+        $validated_data['slug'] = Str::slug($request->title, '-');
+
+        $project->update($validated_data);
+
+        return redirect()->route('admin.projects.show', ['project' => $project->slug]);
+
     }
 
     /**
