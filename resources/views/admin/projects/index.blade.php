@@ -32,9 +32,17 @@
                         <a class="btn btn-warning"href="{{ route('admin.projects.edit', ['project' => $project->slug]) }}">
                             Modifica
                         </a>
+                        <form action="{{ route('admin.projects.destroy', ['project' => $project->slug]) }}" method="POST">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn btn-danger">
+                                DELETE
+                            </button>
+                        </form>
                     </td>
                 </tr>
             @endforeach
+
 
         </tbody>
     </table>
